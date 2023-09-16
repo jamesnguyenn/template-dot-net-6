@@ -1,0 +1,78 @@
+{
+    // Use IntelliSense to find out which attributes exist for C# debugging
+    // Use hover for the description of the existing attributes
+    // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Haravan.Hr.Api staging",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/src/James.Blog.Api/bin/Debug/net6.0/James.Blog.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/James.Blog.Api",
+            "stopAtEntry": false,
+            "launchBrowser": {
+                "enabled": true,
+                "args": "http://localhost:5006/api/swagger/",
+                "windows": {
+                    "command": "cmd.exe",
+                    "args": "/C start ${auto-detect-url}"
+                },
+                "osx": {
+                    "command": "open"
+                },
+                "linux": {
+                    "command": "xdg-open"
+                }
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "staging"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceRoot}/Views"
+            }
+        },
+        {
+            "name": "Haravan.Hr.Api Development",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/src/James.Blog.Api/bin/Debug/net6.0/James.Blog.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/James.Blog.Api",
+            "stopAtEntry": false,
+            "internalConsoleOptions": "openOnSessionStart",
+            "console": "externalTerminal",
+            "launchBrowser": {
+                "enabled": true,
+                "args": "http://localhost:5006/api/swagger/",
+                "windows": {
+                    "command": "cmd.exe",
+                    "args": "/C start ${auto-detect-url}"
+                },
+                "osx": {
+                    "command": "open"
+                },
+                "linux": {
+                    "command": "xdg-open"
+                }
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        }
+    ],
+    "compounds": [
+        {
+            "name": "API & Worker",
+            "configurations": [
+                "Haravan.Hr.Api Development"
+            ]
+        },
+    ]
+}
