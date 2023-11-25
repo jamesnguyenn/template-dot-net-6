@@ -1,6 +1,6 @@
 using MongoDB.Driver;
 
-namespace James.Blog.Repository.IRepository.Mongo;
+namespace James.Blogs.Repository.IRepository.Mongo;
 
 public interface IMGBaseRepository<T>
 {

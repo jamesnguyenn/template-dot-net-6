@@ -1,7 +1,7 @@
 ﻿using System;
 using MongoDB.Driver;
 
-namespace James.Blog.Repository.MongoInfrastructure
+namespace James.Blogs.Repository.MongoInfrastructure
 {
     public interface IMongoDb
     {

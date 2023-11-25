@@ -1,7 +1,7 @@
-using James.Blog.Repository.IRepository.Mongo;
-using James.Blog.Repository.MongoInfrastructure;
+using James.Blogs.Repository.IRepository.Mongo;
+using James.Blogs.Repository.MongoInfrastructure;
 using MongoDB.Driver;
-namespace James.Blog.Repository.Repository.Mongo;
+namespace James.Blogs.Repository.Repository.Mongo;
 
 public abstract class MGBaseRepository<T> : IMGBaseRepository<T>
 {

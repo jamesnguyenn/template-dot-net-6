@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 
-namespace James.Blog.API
+namespace James.Blogs.API
 {
     public class Program
     {

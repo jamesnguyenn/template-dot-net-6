@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "James.Blog.API": {
+    "James.Blogs.API": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",

@@ -8,9 +8,6 @@
     <None Remove="MongoInfrastructure\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MongoInfrastructure\" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="MongoDB.Driver" Version="2.21.0" />
   </ItemGroup>
 </Project>

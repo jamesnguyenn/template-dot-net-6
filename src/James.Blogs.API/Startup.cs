@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Reflection;
-using James.Blog.Business.Extensions;
+using James.Blogs.Business.Extensions;
 using Microsoft.OpenApi.Models;
 
-namespace James.Blog.API
+namespace James.Blogs.API
 {
     public class Startup
     {
@@ -19,7 +19,8 @@ namespace James.Blog.API
         {
             //services.AddApiCore(Configuration, Env);
             var migrationsAssembly = typeof(Startup).GetTypeInfo()?.Assembly?.GetName()?.Name;
-            if(migrationsAssembly != null) {
+            if (migrationsAssembly != null)
+            {
                 services.AddCoreService(Configuration, migrationsAssembly);
                 services.AddScopedService(Configuration, migrationsAssembly);
             }
@@ -35,15 +36,15 @@ namespace James.Blog.API
 
             var pathBase = "/api";
             app.UsePathBase(pathBase);
-           app.UseSwagger(options =>
-                {
+            app.UseSwagger(options =>
+                 {
 
-                    options.PreSerializeFilters.Add((swagger, httpReq) =>
-                    {
-                        var serverUrl = $"{httpReq.Scheme}s://{httpReq.Host.Value}{pathBase}";
-                        swagger.Servers = new List<OpenApiServer> { new OpenApiServer { Url = serverUrl } };
-                    });
-                });
+                     options.PreSerializeFilters.Add((swagger, httpReq) =>
+                     {
+                         var serverUrl = $"{httpReq.Scheme}s://{httpReq.Host.Value}{pathBase}";
+                         swagger.Servers = new List<OpenApiServer> { new OpenApiServer { Url = serverUrl } };
+                     });
+                 });
             app.UseSwaggerUI();
         }
     }

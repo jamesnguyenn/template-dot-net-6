@@ -1,10 +1,10 @@
 ﻿using System;
-using James.Blog.Repository.MongoInfrastructure;
+using James.Blogs.Repository.MongoInfrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MongoDB.Driver;
 
-namespace James.Blog.Business.Extensions
+namespace James.Blogs.Business.Extensions
 {
     public static class StartupExtensions
     {
